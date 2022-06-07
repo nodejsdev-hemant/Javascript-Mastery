@@ -53,8 +53,8 @@ Math.max(...[1, 3, 5]); // 5
 Math.min.apply(null, [1, 3, 5]); // 1(first argument to .apply() is the target for this, which in this case does not matter, so I passed in null as the first argument.)
 Math.max.apply(null, [1, 3, 5]); // 5
 //    -------------------------------------------------------------------------
-// find min max number from array
-let arr = [32, 1, 4, 63, 222, 53, 2];
+// find min max number from array using custom method
+var arr = [32, 1, 4, 63, 222, 53, 2];
 
 const findMinMax = (array) => {
   let minValue = array[0];
@@ -69,7 +69,18 @@ const findMinMax = (array) => {
 
 findMinMax(arr);
 //    -------------------------------------------------------------------------
+// find min max number from array using sort method
+var arr = [3, 8, 7, 6, 5, -4, 31, 2, 21, 20, 1].sort((a, b) => a - b);
+var min = arr[0]; // min
+var max = arr[arr.length - 1]; //max
+console.log(min, max); //-4,31
 //    -------------------------------------------------------------------------
+// find min max number from array using reduce method
+var arr = [366, 2323, 52, 66, 224, 7755, 42];
+const minNum = arr.reduce((prev, curr) => Math.min(prev, curr));
+const maxNum = arr.reduce((prev, curr) => Math.max(prev, curr));
+console.log(minNum);
+console.log(maxNum);
 //    -------------------------------------------------------------------------
 //    -------------------------------------------------------------------------
 //    -------------------------------------------------------------------------
