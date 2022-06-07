@@ -42,8 +42,32 @@ const customReverseNewArray = (array) => {
 const reversedNewArray = customReverseNewArray([1, 2, 3, 4, 5, 6]);
 console.log(reversedArray);
 //    -------------------------------------------------------------------------
+// Find Minimum and Maximum Values in an Array:-(“[The spread] operator causes the values in the array to be expanded, or ‘spread,’ into the function’s arguments.”)
+Math.min(1, 3, 5); // 1
+Math.min([1, 3, 5]); // NaN
+// Using the spread operator
+Math.min(...[1, 3, 5]); // 1
+Math.max(...[1, 3, 5]); // 5
 //    -------------------------------------------------------------------------
+// Using Function.prototype.apply() instead of the spread operator
+Math.min.apply(null, [1, 3, 5]); // 1(first argument to .apply() is the target for this, which in this case does not matter, so I passed in null as the first argument.)
+Math.max.apply(null, [1, 3, 5]); // 5
 //    -------------------------------------------------------------------------
+// find min max number from array
+let arr = [32, 1, 4, 63, 222, 53, 2];
+
+const findMinMax = (array) => {
+  let minValue = array[0];
+  let maxValue = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < minValue) minValue = array[i];
+    if (array[i] > maxValue) maxValue = array[i];
+  }
+  console.log("minValue:", minValue);
+  console.log("maxValue:", maxValue);
+};
+
+findMinMax(arr);
 //    -------------------------------------------------------------------------
 //    -------------------------------------------------------------------------
 //    -------------------------------------------------------------------------
